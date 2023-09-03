@@ -1,16 +1,16 @@
 package Dispositivos;
 
-public class Triggers {
+public class Triggers extends Clase_Padre{
     //Las funciones en los trigers reciben dos parametros
     // el estado de la luz o ventana (False = apagado/cerrado, True = encendido/abierto)
     // y si la casa tiene electricidad (En caso contrario se llama al generador para proveer electricidad)
     // cada función retorna una representación en texto de las acciones correspondientes
 
     // T es por "Trigger" y luego lo que va a cambiar, en este caso Luces
-    public String TLuces(boolean estado, boolean electricidad){
+    public String TLuces(boolean estado){
         String texto;
         //Este if valida si electricidad es true
-        if (electricidad){
+        if (isElectricidad()){
             //Este if valida el estado de la luz es encendido
             if (estado){
                 texto = "Las luces se han apagado";
@@ -22,8 +22,8 @@ public class Triggers {
         } 
         //De otra forma """llama""" al generador 
         else {
-            texto = "No hay electricidad!!" + "\nSe ha activado el generador de la casa";
-            return TLuces(estado, electricidad = true);
+            recuperarLuz();
+            return TLuces(estado);
         }
         return texto;
     }
@@ -44,7 +44,7 @@ public class Triggers {
         } 
         //De otra forma """llama""" al generador 
         else {
-            texto = "No hay electricidad!!" + "\nSe ha activado el generador de la casa";
+            System.out.println("No hay electricidad!!" + "\nSe ha activado el generador de la casa");
             return TVentanas(estado, electricidad = true);
         }
         return texto;

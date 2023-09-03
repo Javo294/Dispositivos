@@ -1,6 +1,6 @@
 package Dispositivos;
 
-public class Suministros {
+public class Suministros extends Clase_Padre{
     //La función de suministros recibe como parámetro el nombre del suministro faltante
     // y retorna un string de representación sobre invocar más suministros
     public String Llamar_Suministros(String faltante){
