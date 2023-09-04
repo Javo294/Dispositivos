@@ -1,15 +1,17 @@
 package Dispositivos;
 
-import Dispositivos.Clase_Padre;
-import Dispositivos.Limpieza;
-import Dispositivos.Suministros;
-import Dispositivos.Triggers;
+import Dispositivos.*;
+import java.io.*;
 
 public class Tester {
-    public void tester(){
+    public static void main(String[] args) throws Exception {
+        //Se instancian las clases
+        Clase_Padre P = new Clase_Padre();
+        Limpieza L = new Limpieza();
+        Suministros S = new Suministros();
+        Triggers T = new Triggers();
 
-        Clase_Padre Generador;
-        
+
     }
 
 }
