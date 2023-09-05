@@ -1,4 +1,4 @@
-package Dispositivos;
+package dispositivos;
 
 public class Limpieza extends Clase_Padre{
     //Cuando la casa se ensucie, se llama la función de limpieza

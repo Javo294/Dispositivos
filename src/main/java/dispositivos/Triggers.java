@@ -1,4 +1,6 @@
-package Dispositivos;
+package dispositivos;
+
+//import java.lang.reflect.Array;
 
 public class Triggers extends Clase_Padre{
     //Las funciones en los trigers reciben dos parametros
@@ -52,5 +54,3 @@ public class Triggers extends Clase_Padre{
 
     
 }
-
-

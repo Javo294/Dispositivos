@@ -1,4 +1,4 @@
-package Dispositivos;
+package dispositivos;
 
 public class Suministros extends Clase_Padre{
     //La función de suministros recibe como parámetro el nombre del suministro faltante
