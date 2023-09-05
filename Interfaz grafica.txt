@@ -4,7 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class gui extends JFrame {
-   
+
+        public void contador() throws InterruptedException{
+        
+        Thread.sleep(5000);
+    }
+
+    
     public gui(){
         setTitle("Dispositivos");
         
@@ -27,14 +33,20 @@ public class gui extends JFrame {
 
         panel.add(cuadroTexto);
 
-        
+
         JButton botonAccion= new JButton("Iniciar programa");
-        
         ActionListener oyenteDeAccion = new ActionListener() {
             
             public void actionPerformed(ActionEvent ae){
                 //Aqui hay que escribir el codigo para actualizar el cuadro de texto
-                cuadroTexto.setText("Hola");
+                
+                try {
+                    //Aqui va la parte del texto de cada funcion de los objetos
+                    cuadroTexto.setText("Hola");
+                    contador();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         };
 
@@ -44,9 +56,9 @@ public class gui extends JFrame {
         
         ActionListener oyenteDeAccion2 = new ActionListener() {
             
-            public void actionPerformed(ActionEvent ae){
+            public void actionPerformed(ActionEvent ae)  {
                 //Aqui hay que escribir el codigo para actualizar el cuadro de texto
-                cuadroTexto.setText("Hola");
+               
             }
         };
 
