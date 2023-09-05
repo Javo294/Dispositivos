@@ -3,6 +3,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class gui extends JFrame {
 
         public void contador() throws InterruptedException{
@@ -39,13 +44,16 @@ public class gui extends JFrame {
             
             public void actionPerformed(ActionEvent ae){
                 //Aqui hay que escribir el codigo para actualizar el cuadro de texto
-                
-                try {
+                int horas=0;
+                while(horas<=24) {
+                    try {
                     //Aqui va la parte del texto de cada funcion de los objetos
                     cuadroTexto.setText("Hola");
                     contador();
+                    horas++;
                 } catch (InterruptedException e) {
                     e.printStackTrace();
+                    }
                 }
             }
         };
