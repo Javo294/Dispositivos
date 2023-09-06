@@ -1,30 +1,32 @@
 package dispositivos;
 
-import dispositivos.*;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 
 public class Tester {
     public static void main(String[] args) throws Exception {
-        //Se instancian las clases
-        Clase_Padre P = new Clase_Padre();
-        Limpieza L = new Limpieza();
-        Suministros S = new Suministros();
-        Triggers T = new Triggers();
+        // Tu JSON como una cadena
+        String amanecer = "{\"nombre\":\"Amanecer\", \"hora\":6, \"dias\":[\"lunes\",\"martes\",\"miercoles\",\"jueves\",\"sabado\",\"domingo\"]}";
+        String anochecer = "{\"nombre\":\"Anochecer\", \"hora\":18, \"dias\":[\"lunes\",\"martes\",\"miercoles\",\"jueves\",\"sabado\",\"domingo\"]}";
         
+        // Crear un objeto Gson
+        Gson gson = new Gson();
 
-        String amanecer = "{\"nombre\":\"Amanecer\", \"hora\":6}";
-        String anochecer = "{\"nombre\":\"Anochecer\", \"hora\":18}";
+        // Parsear el JSON en un objeto JsonObject
+        JsonObject ObjetoAmanecer = gson.fromJson(amanecer, JsonObject.class);
+        JsonObject ObjetoAnochecer = gson.fromJson(anochecer, JsonObject.class);
 
-        Gson gson  = new Gson();
+        // Acceder a los atributos de amanecer
+        String nombre = ObjetoAmanecer.get("nombre").getAsString();
+        int hora = ObjetoAmanecer.get("hora").getAsInt();
+        JsonArray diasArray = ObjetoAmanecer.get("dias").getAsJsonArray();
 
-        JsonObject jsonObject = gson.fromJson(amanecer, JsonObject.class);
-
-        String nombre = jsonObject.get("nombre").getAsString();
-        int hora = jsonObject.get("hora").getAsInt(); // "Hora" debe coincidir con la clave en el JSON
-
-        System.out.println(hora);
+        // Ahora tienes los valores en las variables nombre, hora, diasArray
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Edad: " + hora);
+        System.out.println("Dias: " + diasArray);
     }
 }
 
