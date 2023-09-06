@@ -19,7 +19,7 @@ public class App
         // Crear un objeto Gson
         Gson gson = new Gson();
 
-        // Parsear el JSON en un objeto JsonObject
+        // Parsear el JSON en un objeto JsonObject (ObjetoAmanecer)
         JsonObject ObjetoAmanecer = gson.fromJson(amanecer, JsonObject.class);
         JsonObject ObjetoAnochecer = gson.fromJson(anochecer, JsonObject.class);
 
@@ -27,11 +27,10 @@ public class App
         String nombre = ObjetoAmanecer.get("nombre").getAsString();
         int hora = ObjetoAmanecer.get("hora").getAsInt();
         JsonArray diasArray = ObjetoAmanecer.get("dias").getAsJsonArray();
-        // String trabajo = ObjetoAmanecer.get("Trabajo").getAsString();
 
-        // Ahora tienes los valores en las variables nombre, edad y trabajo
+        // Ahora tienes los valores en las variables nombre, hora y dias
         System.out.println("Nombre: " + nombre);
-        System.out.println("Edad: " + hora);
-        System.out.println("Dias: " + diasArray);
+        System.out.println("hora: " + hora);
+        System.out.println("dias: " + diasArray);
     }
 }
